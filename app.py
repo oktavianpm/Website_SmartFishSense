@@ -9,17 +9,27 @@ from PIL import Image
 
 # import datetime for date fields
 from datetime import datetime,timedelta
-datetime_now = datetime.now() # pass this to a MongoDB doc
+# datetime_now = datetime.now() # pass this to a MongoDB doc
 
-im = Image.open("picture/favicon.ico")
+logo_tab = Image.open("picture/favicon.ico")
+logo_produk = Image.open("picture/android-chrome-192x192.png")
+
 st.set_page_config(
     page_title='SmartFishSense',
-    page_icon=im,
+    page_icon=logo_tab,
     layout='centered', #centered or wide
     initial_sidebar_state='expanded',
 )
+  
+col1, col2, col3 = st.columns([5,4,5])
+with col1:
+    st.write("")
+with col2:
+    st.image(logo_produk)
+with col3:
+    st.write("")
 
-st.title("SmartFishSense")
+st.markdown("<h1 style='text-align: center; color:textColor ;'>Smart Fish Sense</h1>", unsafe_allow_html=True)
 
 # --- HIDE STREAMLIT STYLE ---
 hide_st_style = """
@@ -63,7 +73,7 @@ def add_data():
     # # coll.drop()
 
     timex = datetime.today()
-    timex = timex + timedelta(hours=7) #khusus buat di github
+    # timex = timex + timedelta(hours=7) #khusus buat di github
     docs = [
             {"Date": (timex.strftime("%x")),"Time":  (timex.strftime("%X")), "Reset": resetx, "Exit_idle": exitx, "Status": statusx, "Confidence": confidencex,},
             ]
