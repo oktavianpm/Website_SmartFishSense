@@ -11,7 +11,7 @@ from PIL import Image
 from datetime import datetime,timedelta
 datetime_now = datetime.now() # pass this to a MongoDB doc
 
-im = Image.open("favicon.ico")
+im = Image.open("picture/favicon.ico")
 st.set_page_config(
     page_title='SmartFishSense',
     page_icon=im,
