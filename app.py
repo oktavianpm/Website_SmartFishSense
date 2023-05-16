@@ -62,7 +62,7 @@ def add_data():
     # coll = db.data1
     # # coll.drop()
 
-    # timex = datetime.today()
+    timex = datetime.today()
     timex = timex + timedelta(hours=7) #khusus buat di github
     docs = [
             {"Date": (timex.strftime("%x")),"Time":  (timex.strftime("%X")), "Reset": resetx, "Exit_idle": exitx, "Status": statusx, "Confidence": confidencex,},
