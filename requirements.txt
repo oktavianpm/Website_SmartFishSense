@@ -1,0 +1,5 @@
+pandas
+numpy
+pymongo==4.3.3
+streamlit_option_menu
+datetime
