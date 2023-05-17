@@ -21,11 +21,11 @@ st.set_page_config(
     initial_sidebar_state='expanded',
 )
   
-col1, col2, col3 = st.columns([5,4,5])
+col1, col2, col3 = st.columns(3)
 with col1:
     st.write("")
 with col2:
-    st.image(logo_produk)
+    st.image(logo_produk,use_column_width=True)
 with col3:
     st.write("")
 
@@ -58,13 +58,11 @@ db = client.TA
 coll = db.data1
 # coll.drop()
 
-col1, col2 = st.columns(2)
-
 #Inisialisasi awal
 resetx = 0
 exitx = 0
-statusx = 0
-confidencex = 0
+statusx = ""
+confidencex = ""
 
 def add_data():
     # client = MongoClient(uri)
@@ -104,14 +102,25 @@ def query(payload):
 #     "parameters": {"candidate_labels": ["refund", "legal", "faq"]},
 # })
 
+m = st.markdown("""
+<style>
+div.stButton > button:first-child {
+    background-color: #4dc7a2;
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+}
+</style>""", unsafe_allow_html=True)
+
 if selected == "Control Menu":
+    col1, col2 = st.columns(2)
     with col1:
-        if st.button('Reset'):
+        if st.columns([4,1,4])[1].button("Reset"):
             resetx = 1
         else:
             resetx = 0
     with col2:
-        if st.button('Exit Idle'):
+        if st.columns([4,1,4])[1].button("Run"):
             exitx = 1
         else:
             exitx = 0
