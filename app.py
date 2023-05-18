@@ -62,7 +62,7 @@ confidencex = ""
 
 def add_data_input():
     timex = datetime.today()
-    # timex = timex + timedelta(hours=7) #khusus buat di github
+    timex = timex + timedelta(hours=7) #khusus buat di github
     docs = [
             {"Date": (timex.strftime("%x")),"Time":  (timex.strftime("%X")), "Reset": resetx, "Run": exitx,},
             ]
@@ -70,7 +70,7 @@ def add_data_input():
 
 def add_data_output():
     timex = datetime.today()
-    # timex = timex + timedelta(hours=7) #khusus buat di github
+    timex = timex + timedelta(hours=7) #khusus buat di github
     docs = [
             {"Date": (timex.strftime("%x")),"Time":  (timex.strftime("%X")), "Status": statusx, "Confidence": confidencex,},
             ]
