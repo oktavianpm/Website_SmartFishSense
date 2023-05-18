@@ -165,7 +165,7 @@ st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
 
 if selected == "Recent Status":
-    output_index = st.slider('Previous Data', 0, 100)
+    output_index = st.slider('Previous Data', 0, 100, 10)
     data_status = load_data_output(output_index)
     st.table(data_status)
 
