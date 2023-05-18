@@ -84,10 +84,10 @@ def load_data_input():
     df_selected = df[selected_columns]
     return (df_selected)
 
-def load_data_output():
+def load_data_output(z):
     x = output_user.find()
     df = pd.DataFrame(x)
-    df = df.iloc[::-1]
+    df = df.iloc[::-1].head(z)
     selected_columns = ['Date','Time','Status','Confidence']
     df_selected = df[selected_columns]
     return (df_selected)
@@ -165,11 +165,12 @@ st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
 
 if selected == "Recent Status":
-    data_status = load_data_output()
+    output_index = st.slider('Previous Data', 0, 100)
+    data_status = load_data_output(output_index)
     st.table(data_status)
 
-    with st.expander("Data Input"):
-        data_inputx = load_data_input()
-        st.table(data_inputx)
+#     with st.expander("Data Input"):
+#         data_inputx = load_data_input()
+#         st.table(data_inputx)
     
 client.close()
