@@ -147,8 +147,8 @@ if selected == "Control Menu":
         data_input = add_data_input()
         result_input = input_user.insert_many(data_input)
         
-        data_output = add_data_output()
-        result_output = output_user.insert_many(data_output)
+#         data_output = add_data_output()
+#         result_output = output_user.insert_many(data_output)
 
 # CSS to inject contained in a string
 hide_table_row_index = """
