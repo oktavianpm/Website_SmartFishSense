@@ -86,6 +86,7 @@ def load_data_input():
 def load_data_output():
     x = output_user.find()
     df = pd.DataFrame(x)
+    df = df.iloc[::-1]
     selected_columns = ['Date','Time','Status','Confidence']
     df_selected = df[selected_columns]
     return (df_selected)
